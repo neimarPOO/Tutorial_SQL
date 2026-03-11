@@ -1,0 +1,115 @@
+:root {
+  --primary: #ff5722;      /* Tomato Orange/Red */
+  --primary-dark: #e64a19;
+  --secondary: #ffeb3b;    /* Vibrant Yellow */
+  --secondary-dark: #fdd835;
+  --accent: #4caf50;       /* Concept Green */
+  --accent-dark: #43a047;
+  --background: #fff8e1;   /* Warm background */
+  --surface: #ffffff;
+  --text: #37474f;
+  --text-light: #78909c;
+  --border: #ffccbc;
+  
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 8px rgba(255, 87, 34, 0.15);
+  --shadow-lg: 0 8px 16px rgba(255, 87, 34, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+button {
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 0 var(--primary-dark);
+}
+.btn-primary:active {
+  box-shadow: 0 0 0 var(--primary-dark);
+  transform: translateY(4px);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--text);
+  box-shadow: 0 4px 0 var(--secondary-dark);
+}
+.btn-secondary:active {
+  box-shadow: 0 0 0 var(--secondary-dark);
+  transform: translateY(4px);
+}
+
+/* Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes bounce-sm {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.bounce {
+  animation: bounce-sm 0.5s ease-in-out infinite;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.pop-in {
+  animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* SQL Editor basic theme */
+.sql-editor {
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+}
+.sql-keyword { color: var(--primary); font-weight: bold; }
+.sql-string { color: var(--accent); }
+.sql-number { color: #2196f3; }
